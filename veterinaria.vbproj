@@ -104,7 +104,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="endida_es\ClaseMascota.vb" />
+    <Compile Include="endida_es\claseMascota.vb" />
     <Compile Include="endida_es\clasePersona.vb" />
     <Compile Include="Logica\logicaMascota.vb" />
     <Compile Include="Logica\logicaPersona.vb" />

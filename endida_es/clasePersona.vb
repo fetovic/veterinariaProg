@@ -37,14 +37,14 @@
             _direccion = value
         End Set
     End Property
-    Public Sub personas(ci_ As Integer, nombreP_ As String, tel_ As Integer, dir_ As String)
+    Public Sub clasePersona(ci_ As Integer, nombreP_ As String, tel_ As Integer, dir_ As String)
         Ci = ci_
         Nombre = nombreP_
         Telefono = tel_
         direccion = dir_
     End Sub
 
-    Public Sub persona()
+    Public Sub clasePersona()
 
     End Sub
 

@@ -1,4 +1,4 @@
-﻿Public Class ClaseMascota
+﻿Public Class claseMascota
     Private _nombreM As String
     Private _fechaNac As Integer
     Private _dueño As Persona
@@ -15,10 +15,10 @@
 
     Public Property NombreM As String
         Get
-            Return _nombrem
+            Return _nombreM
         End Get
         Set(value As String)
-            _nombrem = value
+            _nombreM = value
         End Set
     End Property
     Public Property FechaNac As Integer

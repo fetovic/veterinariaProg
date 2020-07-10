@@ -19,11 +19,23 @@
 
         lblfin.Text = CStr(ci) + " " + nombreP + " " + CStr(telefono) + " " + direccion
 
+        Dim newPersona As New clasePersona()
+        newPersona.Ci = ci
+        newPersona.Nombre = nombreP
+        newPersona.direccion = direccion
+
+        Dim logicaPersona As New logicaPersona
+        logicaPersona.AltaPersona(newPersona)
+
 
     End Sub
 
     Private Sub btncancelarp_Click(sender As Object, e As EventArgs) Handles btncancelarp.Click
         Me.Close()
+
+    End Sub
+
+    Private Sub Persona_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class
