@@ -37,7 +37,6 @@ C:\Users\Alumno\source\repos\veterinariaProg\bin\Debug\System.Text.Encodings.Web
 C:\Users\Alumno\source\repos\veterinariaProg\bin\Debug\System.Text.Json.xml
 C:\Users\Alumno\source\repos\veterinariaProg\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Alumno\source\repos\veterinariaProg\bin\Debug\System.ValueTuple.xml
-C:\Users\Alumno\source\repos\veterinariaProg\obj\Debug\veterinaria.vbprojAssemblyReference.cache
 C:\Users\Alumno\source\repos\veterinariaProg\obj\Debug\veterinaria.inicio.resources
 C:\Users\Alumno\source\repos\veterinariaProg\obj\Debug\veterinaria.Persona.resources
 C:\Users\Alumno\source\repos\veterinariaProg\obj\Debug\veterinaria.Mascota.resources

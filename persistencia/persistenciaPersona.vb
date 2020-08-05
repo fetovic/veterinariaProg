@@ -8,8 +8,9 @@
             Dim clasCnn = New conexion
             conection = clasCnn.abrirConexion()
             Dim cadenaDeComandos As String
-            cadenaDeComandos = "insert into persona(ci,nombre,direccion) values (@ci ,@nombre,@direccion)"
-            Dim cmd As New Npgsql.NpgsqlCommand
+            cadenaDeComandos = "insert into Persona(ci,nombre,direccion) values (@ci ,@nombre,@direccion)"
+            Dim cmd As New Npgsql.NpgsqlCommand(cadenaDeComandos)
+
             cmd.Connection = conection
             cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = personaUser.Ci
             cmd.Parameters.Add("@nombre", NpgsqlTypes.NpgsqlDbType.Varchar, 100).Value = personaUser.Nombre

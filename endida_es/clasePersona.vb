@@ -1,9 +1,9 @@
 ﻿Public Class clasePersona
 
     Private _ci As Integer
-    Private _nombre As Integer
+    Private _nombre As String
     Private _telefono As Integer
-    Private _direccion As Integer
+    Private _direccion As String
 
     Public Property Ci As Integer
         Get
