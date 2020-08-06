@@ -26,8 +26,9 @@
 
     End Sub
     Public Function buscarPersona(ci As Integer) As clasePersona
-        Dim newPersona As New clasePersona
+
         Try
+            Dim newPersona As New clasePersona
             Dim clasCnn As New conexion
             Dim cadenaDeComandos As String
 
@@ -49,11 +50,16 @@
                 newPersona.Nombre = reader(1).ToString
                 newPersona.direccion = reader(2).ToString
             End If
+            If newPersona.Nombre = "" And newPersona.direccion = "" Then
+            Else
+                Return newPersona
+            End If
+
         Catch ex As Exception
             Throw ex
         Finally
             conection.close
         End Try
-        Return newPersona
+
     End Function
 End Class
