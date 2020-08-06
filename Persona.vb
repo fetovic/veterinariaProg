@@ -38,4 +38,17 @@
     Private Sub Persona_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub tbxci_TextChanged(sender As Object, e As EventArgs) Handles tbxci.TextChanged
+        Dim ci As Integer
+        ci = tbxci.Text
+        Dim newpersona As New clasePersona
+        Dim logica As New logicaPersona
+        newpersona = logica.buscarPersona(ci)
+        If IsNothing(newpersona) Then
+        Else
+            tbxnombre.Text = newpersona.Nombre
+            tbxdireccion.Text = newpersona.direccion
+        End If
+    End Sub
 End Class

@@ -6,7 +6,7 @@
 
             Dim cadenaDeConexion As String
 
-            cadenaDeConexion = "Server=127.0.0.1;Port=5432;User Id='postgres';Password='root';Database=bdd1"
+            cadenaDeConexion = "Server=127.0.0.1;Port=5433;User Id='postgres';Password='root';Database=bdd1"
 
             conexionPg.ConnectionString = cadenaDeConexion
 

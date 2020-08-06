@@ -6,6 +6,7 @@
     Public Sub AltaPersona(personaUser As clasePersona)
         Try
             Dim clasCnn = New conexion
+
             conection = clasCnn.abrirConexion()
             Dim cadenaDeComandos As String
             cadenaDeComandos = "insert into Persona(ci,nombre,direccion) values (@ci ,@nombre,@direccion)"
@@ -24,4 +25,35 @@
         End Try
 
     End Sub
+    Public Function buscarPersona(ci As Integer) As clasePersona
+        Dim newPersona As New clasePersona
+        Try
+            Dim clasCnn As New conexion
+            Dim cadenaDeComandos As String
+
+
+            Dim reader As Npgsql.NpgsqlDataReader
+            conection = clasCnn.abrirConexion()
+            Dim cmd As New Npgsql.NpgsqlCommand()
+
+            cmd.Connection = conection
+
+            cadenaDeComandos = "select * from persona where ci=@ci;"
+            cmd.CommandText = cadenaDeComandos
+            cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = ci
+            reader = cmd.ExecuteReader
+
+            If reader.HasRows Then
+                reader.Read()
+                newPersona.Ci = Convert.ToInt32(reader(0).ToString)
+                newPersona.Nombre = reader(1).ToString
+                newPersona.direccion = reader(2).ToString
+            End If
+        Catch ex As Exception
+            Throw ex
+        Finally
+            conection.close
+        End Try
+        Return newPersona
+    End Function
 End Class
