@@ -1,28 +1,25 @@
 ﻿Public Class Persona
-
-    Dim ci As Integer
-    Dim nombreP As String
-    Dim telefono As Integer
-    Dim direccion As String
+    Dim listaTelefono As New List(Of Integer)
 
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
-    End Sub
 
 
     Private Sub btnaceptarP_Click(sender As Object, e As EventArgs) Handles btnaceptarP.Click
-        ci = CInt(tbxci.Text)
-        nombreP = tbxnombre.Text
-        telefono = CInt(tbxtelefono.Text)
-        direccion = tbxdireccion.Text
+        Dim ci As Integer
+        ci = tbxci.Text
+        Dim nombrep As String
+        nombrep = tbxnombre.Text
 
-        lblfin.Text = CStr(ci) + " " + nombreP + " " + CStr(telefono) + " " + direccion
+
+        Dim direccion As String
+        direccion = tbxdireccion.Text
 
         Dim newPersona As New clasePersona()
         newPersona.Ci = ci
-        newPersona.Nombre = nombreP
+        newPersona.Nombre = nombrep
         newPersona.direccion = direccion
+        newPersona.ListaTelefono = listaTelefono
 
         Dim logicaPersona As New logicaPersona
         logicaPersona.AltaPersona(newPersona)
@@ -32,10 +29,6 @@
 
     Private Sub btncancelarp_Click(sender As Object, e As EventArgs) Handles btncancelarp.Click
         Me.Close()
-
-    End Sub
-
-    Private Sub Persona_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 
@@ -50,5 +43,18 @@
             tbxnombre.Text = newpersona.Nombre
             tbxdireccion.Text = newpersona.direccion
         End If
+    End Sub
+
+    Private Sub BtnTelefono_Click(sender As Object, e As EventArgs) Handles BtnTelefono.Click
+        Dim telefonos As Integer
+
+        telefonos = tbxtelefono.Text
+
+        lVTelefonos.Items.Add(telefonos)
+
+        listaTelefono.Add(telefonos)
+
+        tbxtelefono.Text = ""
+
     End Sub
 End Class

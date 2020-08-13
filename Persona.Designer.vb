@@ -34,6 +34,8 @@ Partial Class Persona
         Me.btnaceptarP = New System.Windows.Forms.Button()
         Me.btncancelarp = New System.Windows.Forms.Button()
         Me.lblfin = New System.Windows.Forms.Label()
+        Me.lVTelefonos = New System.Windows.Forms.ListView()
+        Me.BtnTelefono = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -142,11 +144,32 @@ Partial Class Persona
         Me.lblfin.TabIndex = 14
         Me.lblfin.Text = "CI"
         '
+        'lVTelefonos
+        '
+        Me.lVTelefonos.HideSelection = False
+        Me.lVTelefonos.Location = New System.Drawing.Point(12, 152)
+        Me.lVTelefonos.Name = "lVTelefonos"
+        Me.lVTelefonos.Size = New System.Drawing.Size(195, 138)
+        Me.lVTelefonos.TabIndex = 15
+        Me.lVTelefonos.UseCompatibleStateImageBehavior = False
+        Me.lVTelefonos.View = System.Windows.Forms.View.List
+        '
+        'BtnTelefono
+        '
+        Me.BtnTelefono.Location = New System.Drawing.Point(225, 224)
+        Me.BtnTelefono.Name = "BtnTelefono"
+        Me.BtnTelefono.Size = New System.Drawing.Size(56, 23)
+        Me.BtnTelefono.TabIndex = 16
+        Me.BtnTelefono.Text = "btnTelefono"
+        Me.BtnTelefono.UseVisualStyleBackColor = True
+        '
         'Persona
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(771, 469)
+        Me.Controls.Add(Me.BtnTelefono)
+        Me.Controls.Add(Me.lVTelefonos)
         Me.Controls.Add(Me.lblfin)
         Me.Controls.Add(Me.btncancelarp)
         Me.Controls.Add(Me.btnaceptarP)
@@ -178,4 +201,6 @@ Partial Class Persona
     Friend WithEvents btnaceptarP As Button
     Friend WithEvents btncancelarp As Button
     Friend WithEvents lblfin As Label
+    Friend WithEvents lVTelefonos As ListView
+    Friend WithEvents BtnTelefono As Button
 End Class
