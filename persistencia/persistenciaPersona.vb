@@ -18,7 +18,7 @@
             cmd.Parameters.Add("@direccion", NpgsqlTypes.NpgsqlDbType.Varchar, 100).Value = personaUser.direccion
             Dim resultado As Integer
             resultado = cmd.ExecuteNonQuery()
-
+            'alta telefono
             If resultado = 1 Then
                 Dim i As Integer
                 i = 0
@@ -27,7 +27,6 @@
 
                     cadenaDeComandos = "insert into telefono(cip,telefono) values (@cip ,@telefono);"
                     cmd.CommandText = cadenaDeComandos
-                    cmd.Connection = conection
                     cmd.Parameters.Add("@cip", NpgsqlTypes.NpgsqlDbType.Integer).Value = personaUser.Ci
                     cmd.Parameters.Add("@telefono", NpgsqlTypes.NpgsqlDbType.Integer).Value = personaUser.ListaTelefono.Item(i)
 
@@ -36,6 +35,31 @@
 
                 End While
             End If
+
+        Catch ex As Exception
+            Throw ex
+        Finally
+            conection.close
+        End Try
+
+    End Sub
+
+    Public Sub modificarParsona(personaUser As clasePersona)
+        Try
+            Dim clasCnn = New conexion
+
+            conection = clasCnn.abrirConexion()
+            Dim cadenaDeComandos As String
+            cadenaDeComandos = "update persona set nombre=@nombre, direccion=@direccion where ci=@ci"
+            Dim cmd As New Npgsql.NpgsqlCommand()
+            cmd.CommandText = cadenaDeComandos
+            cmd.Connection = conection
+            cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = personaUser.Ci
+            cmd.Parameters.Add("@nombre", NpgsqlTypes.NpgsqlDbType.Varchar, 100).Value = personaUser.Nombre
+            cmd.Parameters.Add("@direccion", NpgsqlTypes.NpgsqlDbType.Varchar, 100).Value = personaUser.direccion
+            Dim resultado As Integer
+            resultado = cmd.ExecuteNonQuery()
+
 
         Catch ex As Exception
             Throw ex

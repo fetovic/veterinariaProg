@@ -57,4 +57,15 @@
         tbxtelefono.Text = ""
 
     End Sub
+
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+        Dim perosonaAModificar As New clasePersona
+        perosonaAModificar.Ci = tbxci.Text
+        perosonaAModificar.Nombre = tbxnombre.Text
+        perosonaAModificar.direccion = tbxdireccion.Text
+
+        Dim logica1 As New logicaPersona
+        logica1.modificarPersona(perosonaAModificar)
+
+    End Sub
 End Class

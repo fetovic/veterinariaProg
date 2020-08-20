@@ -36,6 +36,7 @@ Partial Class Persona
         Me.lblfin = New System.Windows.Forms.Label()
         Me.lVTelefonos = New System.Windows.Forms.ListView()
         Me.BtnTelefono = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -163,11 +164,21 @@ Partial Class Persona
         Me.BtnTelefono.Text = "btnTelefono"
         Me.BtnTelefono.UseVisualStyleBackColor = True
         '
+        'btnModificar
+        '
+        Me.btnModificar.Location = New System.Drawing.Point(321, 344)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(171, 34)
+        Me.btnModificar.TabIndex = 17
+        Me.btnModificar.Text = "modificar"
+        Me.btnModificar.UseVisualStyleBackColor = True
+        '
         'Persona
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(771, 469)
+        Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.BtnTelefono)
         Me.Controls.Add(Me.lVTelefonos)
         Me.Controls.Add(Me.lblfin)
@@ -203,4 +214,5 @@ Partial Class Persona
     Friend WithEvents lblfin As Label
     Friend WithEvents lVTelefonos As ListView
     Friend WithEvents BtnTelefono As Button
+    Friend WithEvents btnModificar As Button
 End Class
