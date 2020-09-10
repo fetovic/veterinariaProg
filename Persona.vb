@@ -6,24 +6,29 @@
 
 
     Private Sub btnaceptarP_Click(sender As Object, e As EventArgs) Handles btnaceptarP.Click
-        Dim ci As Integer
-        ci = tbxci.Text
-        Dim nombrep As String
-        nombrep = tbxnombre.Text
+        Try
 
 
-        Dim direccion As String
-        direccion = tbxdireccion.Text
+            Dim ci As Integer
+            ci = tbxci.Text
+            Dim nombrep As String
+            nombrep = tbxnombre.Text
 
-        Dim newPersona As New clasePersona()
-        newPersona.Ci = ci
-        newPersona.Nombre = nombrep
-        newPersona.direccion = direccion
-        newPersona.ListaTelefono = listaTelefono
 
-        Dim logicaPersona As New logicaPersona
-        logicaPersona.AltaPersona(newPersona)
+            Dim direccion As String
+            direccion = tbxdireccion.Text
 
+            Dim newPersona As New clasePersona()
+            newPersona.Ci = ci
+            newPersona.Nombre = nombrep
+            newPersona.direccion = direccion
+            newPersona.ListaTelefono = listaTelefono
+
+            Dim logicaPersona As New logicaPersona
+            logicaPersona.AltaPersona(newPersona)
+        Catch ex As Exception
+            MsgBox("hiciste cualquier cosa, :" + ex.Message)
+        End Try
 
     End Sub
 
@@ -42,6 +47,13 @@
         Else
             tbxnombre.Text = newpersona.Nombre
             tbxdireccion.Text = newpersona.direccion
+            listaTelefono = newpersona.ListaTelefono
+            Dim i As Integer = 0
+            While listaTelefono.Count > i
+                lVTelefonos.Items.Add(listaTelefono(i))
+                i = i + 1
+
+            End While
         End If
     End Sub
 
@@ -66,6 +78,35 @@
 
         Dim logica1 As New logicaPersona
         logica1.modificarPersona(perosonaAModificar)
+
+    End Sub
+
+    Private Sub lVTelefonos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lVTelefonos.SelectedIndexChanged
+        Try
+            Dim telefono As String
+            Dim telefonoEleminado As Integer
+            telefono = lVTelefonos.SelectedItems(0).SubItems(0).Text
+            telefonoEleminado = Convert.ToInt32(telefono)
+            Dim i As Integer = 0
+
+            While listaTelefono.Count > i
+                If listaTelefono.Item(i) = telefonoEleminado Then
+                    listaTelefono.Remove(telefonoEleminado)
+                    i = listaTelefono.Count
+                End If
+                i = i + 1
+            End While
+            lVTelefonos.Clear()
+            i = 0
+            While listaTelefono.Count > i
+                lVTelefonos.Items.Add(listaTelefono.Item(i))
+                i = i + 1
+
+            End While
+
+        Catch ex As Exception
+            MsgBox("hiciste cualquier cosa, :" + ex.Message)
+        End Try
 
     End Sub
 End Class
