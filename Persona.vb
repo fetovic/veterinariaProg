@@ -43,6 +43,7 @@
         Dim newpersona As New clasePersona
         Dim logica As New logicaPersona
         newpersona = logica.buscarPersona(ci)
+        lVTelefonos.Clear()
         If IsNothing(newpersona) Then
         Else
             tbxnombre.Text = newpersona.Nombre
@@ -75,6 +76,8 @@
         perosonaAModificar.Ci = tbxci.Text
         perosonaAModificar.Nombre = tbxnombre.Text
         perosonaAModificar.direccion = tbxdireccion.Text
+
+        perosonaAModificar.ListaTelefono = listaTelefono
 
         Dim logica1 As New logicaPersona
         logica1.modificarPersona(perosonaAModificar)
