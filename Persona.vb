@@ -90,7 +90,7 @@
             Dim telefonoEleminado As Integer
             telefono = lVTelefonos.SelectedItems(0).SubItems(0).Text
             telefonoEleminado = Convert.ToInt32(telefono)
-            Dim i As Integer = 1
+            Dim i As Integer = 0
 
             While listaTelefono.Count > i
                 If listaTelefono.Item(i) = telefonoEleminado Then
