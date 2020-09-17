@@ -37,6 +37,7 @@ Partial Class Persona
         Me.lVTelefonos = New System.Windows.Forms.ListView()
         Me.BtnTelefono = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -139,16 +140,16 @@ Partial Class Persona
         '
         Me.lblfin.AutoSize = True
         Me.lblfin.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblfin.Location = New System.Drawing.Point(109, 121)
+        Me.lblfin.Location = New System.Drawing.Point(68, 128)
         Me.lblfin.Name = "lblfin"
-        Me.lblfin.Size = New System.Drawing.Size(25, 20)
+        Me.lblfin.Size = New System.Drawing.Size(79, 20)
         Me.lblfin.TabIndex = 14
-        Me.lblfin.Text = "CI"
+        Me.lblfin.Text = "Telefonos"
         '
         'lVTelefonos
         '
         Me.lVTelefonos.HideSelection = False
-        Me.lVTelefonos.Location = New System.Drawing.Point(12, 152)
+        Me.lVTelefonos.Location = New System.Drawing.Point(12, 151)
         Me.lVTelefonos.Name = "lVTelefonos"
         Me.lVTelefonos.Size = New System.Drawing.Size(195, 138)
         Me.lVTelefonos.TabIndex = 15
@@ -173,11 +174,21 @@ Partial Class Persona
         Me.btnModificar.Text = "modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
         '
+        'btnBuscar
+        '
+        Me.btnBuscar.Location = New System.Drawing.Point(600, 149)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(149, 22)
+        Me.btnBuscar.TabIndex = 18
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.UseVisualStyleBackColor = True
+        '
         'Persona
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(771, 469)
+        Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.BtnTelefono)
         Me.Controls.Add(Me.lVTelefonos)
@@ -215,4 +226,5 @@ Partial Class Persona
     Friend WithEvents lVTelefonos As ListView
     Friend WithEvents BtnTelefono As Button
     Friend WithEvents btnModificar As Button
+    Friend WithEvents btnBuscar As Button
 End Class

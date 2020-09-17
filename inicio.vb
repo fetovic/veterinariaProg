@@ -3,8 +3,14 @@
 
     End Sub
 
-    Private Sub PersonaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PersonaToolStripMenuItem.Click
-        Persona.ShowDialog()
+    Private Sub altaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaToolStripMenuItem.Click
+        Persona.Show()
+        Persona.Activate()
+
+    End Sub
+    Private Sub bajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarToolStripMenuItem.Click
+        listaPersona.Show()
+        listaPersona.Activate()
 
     End Sub
 

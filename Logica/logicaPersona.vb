@@ -14,4 +14,11 @@
         Dim perstencia As New persistenciaPersona
         Return perstencia.buscarPersona(ci)
     End Function
+    Public Function logicaListarPersona() As List(Of clasePersona)
+
+        Dim persistencia As New persistenciaPersona
+        Return persistencia.listarPersona()
+
+
+    End Function
 End Class

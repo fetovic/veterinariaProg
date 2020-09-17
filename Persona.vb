@@ -33,29 +33,23 @@
     End Sub
 
     Private Sub btncancelarp_Click(sender As Object, e As EventArgs) Handles btncancelarp.Click
-        Me.Close()
+        btnBuscar.Enabled = True
+        tbxci.Enabled = True
+        tbxdireccion.Enabled = False
+        tbxnombre.Enabled = False
+        tbxtelefono.Enabled = False
+        lVTelefonos.Enabled = False
+        btnaceptarP.Enabled = False
+        btncancelarp.Enabled = False
+        BtnTelefono.Enabled = False
+        btnModificar.Enabled = False
 
-    End Sub
-
-    Private Sub tbxci_TextChanged(sender As Object, e As EventArgs) Handles tbxci.TextChanged
-        Dim ci As Integer
-        ci = tbxci.Text
-        Dim newpersona As New clasePersona
-        Dim logica As New logicaPersona
-        newpersona = logica.buscarPersona(ci)
+        tbxci.Text = ""
+        tbxdireccion.Text = ""
+        tbxnombre.Text = ""
+        tbxtelefono.Text = ""
         lVTelefonos.Clear()
-        If IsNothing(newpersona) Then
-        Else
-            tbxnombre.Text = newpersona.Nombre
-            tbxdireccion.Text = newpersona.direccion
-            listaTelefono = newpersona.ListaTelefono
-            Dim i As Integer = 0
-            While listaTelefono.Count > i
-                lVTelefonos.Items.Add(listaTelefono(i))
-                i = i + 1
 
-            End While
-        End If
     End Sub
 
     Private Sub BtnTelefono_Click(sender As Object, e As EventArgs) Handles BtnTelefono.Click
@@ -110,6 +104,65 @@
         Catch ex As Exception
             MsgBox("hiciste cualquier cosa, :" + ex.Message)
         End Try
+
+    End Sub
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        Dim ci As Integer
+        ci = tbxci.Text
+        Dim newpersona As New clasePersona
+        Dim logica As New logicaPersona
+        newpersona = logica.buscarPersona(ci)
+        lVTelefonos.Clear()
+        If IsNothing(newpersona) Then
+            btnBuscar.Enabled = True
+            tbxci.Enabled = True
+            tbxdireccion.Enabled = True
+            tbxnombre.Enabled = True
+            tbxtelefono.Enabled = True
+            lVTelefonos.Enabled = True
+            btnaceptarP.Enabled = True
+            btncancelarp.Enabled = True
+            BtnTelefono.Enabled = True
+            btnModificar.Enabled = False
+        Else
+            tbxnombre.Text = newpersona.Nombre
+            tbxdireccion.Text = newpersona.direccion
+            listaTelefono = newpersona.ListaTelefono
+            Dim i As Integer = 0
+            While listaTelefono.Count > i
+                lVTelefonos.Items.Add(listaTelefono(i))
+                i = i + 1
+
+            End While
+            btnBuscar.Enabled = False
+            tbxci.Enabled = False
+            tbxdireccion.Enabled = True
+            tbxnombre.Enabled = True
+            tbxtelefono.Enabled = True
+            lVTelefonos.Enabled = True
+            btnaceptarP.Enabled = False
+            btncancelarp.Enabled = True
+            BtnTelefono.Enabled = True
+            btnModificar.Enabled = True
+        End If
+
+    End Sub
+
+    Private Sub Persona_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        btnBuscar.Enabled = True
+        tbxci.Enabled = True
+        tbxdireccion.Enabled = False
+        tbxnombre.Enabled = False
+        tbxtelefono.Enabled = False
+        lVTelefonos.Enabled = False
+        btnaceptarP.Enabled = False
+        btncancelarp.Enabled = False
+        BtnTelefono.Enabled = False
+        btnModificar.Enabled = False
+    End Sub
+
+    Private Sub lblfin_Click(sender As Object, e As EventArgs) Handles lblfin.Click
 
     End Sub
 End Class

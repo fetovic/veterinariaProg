@@ -44,9 +44,9 @@
     End Sub
 
     Public Function buscarPersona(ci As Integer) As clasePersona
-
+        Dim newPersona As New clasePersona
         Try
-            Dim newPersona As New clasePersona
+
             Dim clasCnn As New conexion
             Dim cadenaDeComandos As String
 
@@ -82,7 +82,7 @@
             If newPersona.Nombre = "" And newPersona.direccion = "" Then
             Else
                 newPersona.ListaTelefono = listaTelefono
-                Return newPersona
+
             End If
 
 
@@ -91,7 +91,7 @@
         Finally
             conection.close
         End Try
-
+        Return newPersona
     End Function
     Public Sub modificarParsona(personaUser As clasePersona)
         Try
@@ -144,5 +144,38 @@
             Debug.WriteLine(ex)
         End Try
     End Sub
+
+    Public Function listarPersona() As List(Of clasePersona)
+        Dim listaPersona As New List(Of clasePersona)
+        Try
+
+            Dim ClaseSnl As New conexion
+            conection = ClaseSnl.abrirConexion
+            Dim cmd = New Npgsql.NpgsqlCommand
+            cmd.Connection = conection
+
+            Dim cadenaDeComandos = "select * from persona"
+
+            cmd.CommandText = cadenaDeComandos
+            Dim Lector As Npgsql.NpgsqlDataReader = cmd.ExecuteReader
+
+
+            While Lector.Read()
+                Dim newPersona As New clasePersona
+                newPersona.Ci = Convert.ToInt32(Lector(0).ToString)
+                newPersona.Nombre = Lector(1).ToString
+                newPersona.direccion = Lector(2).ToString
+                listaPersona.Add(newPersona)
+            End While
+
+
+
+        Catch ex As Exception
+            Throw ex
+        Finally
+            conection.close
+        End Try
+        Return listaPersona
+    End Function
 
 End Class

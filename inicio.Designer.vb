@@ -27,6 +27,8 @@ Partial Class inicio
         Me.MenuStrip3 = New System.Windows.Forms.MenuStrip()
         Me.PersonaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MascotaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AltaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip3.SuspendLayout()
         Me.SuspendLayout()
@@ -43,6 +45,7 @@ Partial Class inicio
         '
         'MenuStrip3
         '
+        Me.MenuStrip3.ImageScalingSize = New System.Drawing.Size(28, 28)
         Me.MenuStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PersonaToolStripMenuItem, Me.MascotaToolStripMenuItem})
         Me.MenuStrip3.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip3.Name = "MenuStrip3"
@@ -52,6 +55,7 @@ Partial Class inicio
         '
         'PersonaToolStripMenuItem
         '
+        Me.PersonaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaToolStripMenuItem, Me.ListarToolStripMenuItem})
         Me.PersonaToolStripMenuItem.Name = "PersonaToolStripMenuItem"
         Me.PersonaToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.PersonaToolStripMenuItem.Text = "persona"
@@ -61,6 +65,18 @@ Partial Class inicio
         Me.MascotaToolStripMenuItem.Name = "MascotaToolStripMenuItem"
         Me.MascotaToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
         Me.MascotaToolStripMenuItem.Text = "Mascota"
+        '
+        'AltaToolStripMenuItem
+        '
+        Me.AltaToolStripMenuItem.Name = "AltaToolStripMenuItem"
+        Me.AltaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AltaToolStripMenuItem.Text = "Alta"
+        '
+        'ListarToolStripMenuItem
+        '
+        Me.ListarToolStripMenuItem.Name = "ListarToolStripMenuItem"
+        Me.ListarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ListarToolStripMenuItem.Text = "listar"
         '
         'inicio
         '
@@ -83,4 +99,6 @@ Partial Class inicio
     Friend WithEvents MenuStrip3 As MenuStrip
     Friend WithEvents PersonaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MascotaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AltaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ListarToolStripMenuItem As ToolStripMenuItem
 End Class
