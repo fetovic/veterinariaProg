@@ -119,3 +119,4 @@ C:\Users\Administrador\source\repos\veterinariaProg\obj\Debug\veterinaria.vbproj
 C:\Users\Administrador\source\repos\veterinariaProg\obj\Debug\veterinaria.exe
 C:\Users\Administrador\source\repos\veterinariaProg\obj\Debug\veterinaria.xml
 C:\Users\Administrador\source\repos\veterinariaProg\obj\Debug\veterinaria.pdb
+C:\Users\Administrador\source\repos\veterinariaProg\obj\Debug\veterinaria.vbprojAssemblyReference.cache

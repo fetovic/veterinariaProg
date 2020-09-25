@@ -34,9 +34,9 @@ Partial Class listaPersona
         '
         Me.lvListarPersona.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Ci, Me.Nombre, Me.Direccion})
         Me.lvListarPersona.HideSelection = False
-        Me.lvListarPersona.Location = New System.Drawing.Point(190, 89)
+        Me.lvListarPersona.Location = New System.Drawing.Point(136, 89)
         Me.lvListarPersona.Name = "lvListarPersona"
-        Me.lvListarPersona.Size = New System.Drawing.Size(343, 192)
+        Me.lvListarPersona.Size = New System.Drawing.Size(483, 211)
         Me.lvListarPersona.TabIndex = 0
         Me.lvListarPersona.UseCompatibleStateImageBehavior = False
         Me.lvListarPersona.View = System.Windows.Forms.View.Details
@@ -53,7 +53,7 @@ Partial Class listaPersona
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(291, 287)
+        Me.btnEliminar.Location = New System.Drawing.Point(322, 355)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(137, 50)
         Me.btnEliminar.TabIndex = 2
