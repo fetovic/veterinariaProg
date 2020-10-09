@@ -23,23 +23,39 @@ Partial Class listaPersona
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.lvListarPersona = New System.Windows.Forms.ListView()
-        Me.lblListarPersona = New System.Windows.Forms.Label()
-        Me.btnEliminar = New System.Windows.Forms.Button()
         Me.Ci = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Nombre = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Direccion = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.lblListarPersona = New System.Windows.Forms.Label()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.lvTelefono = New System.Windows.Forms.ListView()
         Me.SuspendLayout()
         '
         'lvListarPersona
         '
         Me.lvListarPersona.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Ci, Me.Nombre, Me.Direccion})
         Me.lvListarPersona.HideSelection = False
-        Me.lvListarPersona.Location = New System.Drawing.Point(136, 89)
+        Me.lvListarPersona.Location = New System.Drawing.Point(28, 92)
         Me.lvListarPersona.Name = "lvListarPersona"
         Me.lvListarPersona.Size = New System.Drawing.Size(483, 211)
         Me.lvListarPersona.TabIndex = 0
         Me.lvListarPersona.UseCompatibleStateImageBehavior = False
         Me.lvListarPersona.View = System.Windows.Forms.View.Details
+        '
+        'Ci
+        '
+        Me.Ci.Text = "CI"
+        Me.Ci.Width = 107
+        '
+        'Nombre
+        '
+        Me.Nombre.Text = "Nombre"
+        Me.Nombre.Width = 87
+        '
+        'Direccion
+        '
+        Me.Direccion.Text = "Direccion"
+        Me.Direccion.Width = 137
         '
         'lblListarPersona
         '
@@ -60,26 +76,22 @@ Partial Class listaPersona
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = True
         '
-        'Ci
+        'lvTelefono
         '
-        Me.Ci.Text = "CI"
-        Me.Ci.Width = 107
-        '
-        'Nombre
-        '
-        Me.Nombre.Text = "Nombre"
-        Me.Nombre.Width = 87
-        '
-        'Direccion
-        '
-        Me.Direccion.Text = "Direccion"
-        Me.Direccion.Width = 137
+        Me.lvTelefono.HideSelection = False
+        Me.lvTelefono.Location = New System.Drawing.Point(535, 92)
+        Me.lvTelefono.Name = "lvTelefono"
+        Me.lvTelefono.Size = New System.Drawing.Size(226, 211)
+        Me.lvTelefono.TabIndex = 3
+        Me.lvTelefono.UseCompatibleStateImageBehavior = False
+        Me.lvTelefono.View = System.Windows.Forms.View.List
         '
         'listaPersona
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.lvTelefono)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.lblListarPersona)
         Me.Controls.Add(Me.lvListarPersona)
@@ -96,4 +108,5 @@ Partial Class listaPersona
     Friend WithEvents Ci As ColumnHeader
     Friend WithEvents Nombre As ColumnHeader
     Friend WithEvents Direccion As ColumnHeader
+    Friend WithEvents lvTelefono As ListView
 End Class
