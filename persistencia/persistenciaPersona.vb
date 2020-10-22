@@ -1,6 +1,5 @@
 ﻿Public Class persistenciaPersona
 
-    Dim listaTelefono As New List(Of Integer)
     Dim conection = New Npgsql.NpgsqlConnection
     Public Sub AltaPersona(personaUser As clasePersona)
         Try
@@ -19,20 +18,7 @@
             resultado = cmd.ExecuteNonQuery()
             'alta telefono
             If resultado = 1 Then
-                Dim i As Integer
-                i = 0
-                While i < personaUser.ListaTelefono.Count
 
-
-                    cadenaDeComandos = "insert into telefono(cip,telefono) values (@cip ,@telefono);"
-                    cmd.CommandText = cadenaDeComandos
-                    cmd.Parameters.Add("@cip", NpgsqlTypes.NpgsqlDbType.Integer).Value = personaUser.Ci
-                    cmd.Parameters.Add("@telefono", NpgsqlTypes.NpgsqlDbType.Integer).Value = personaUser.ListaTelefono.Item(i)
-
-                    resultado = cmd.ExecuteNonQuery()
-                    i = i + 1
-
-                End While
             End If
 
         Catch ex As Exception
@@ -69,21 +55,6 @@
                 newPersona.direccion = reader(2).ToString
             End If
             reader.Close()
-            cadenaDeComandos = "select * from telefono where cip = @ci"
-            cmd.CommandText = cadenaDeComandos
-            reader = cmd.ExecuteReader
-
-            While reader.Read()
-
-                listaTelefono.Add(Convert.ToInt32(reader(1).ToString))
-
-
-            End While
-            If newPersona.Nombre = "" And newPersona.direccion = "" Then
-            Else
-                newPersona.ListaTelefono = listaTelefono
-
-            End If
 
 
         Catch ex As Exception
@@ -107,10 +78,7 @@
             cmd.Parameters.Add("@nombre", NpgsqlTypes.NpgsqlDbType.Varchar, 100).Value = personaUser.Nombre
             cmd.Parameters.Add("@direccion", NpgsqlTypes.NpgsqlDbType.Varchar, 100).Value = personaUser.direccion
             Dim resultado As Integer
-            resultado = cmd.ExecuteNonQuery()
-            cadenaDeComandos = "delete from telefono where cip = @ci"
-            cmd.CommandText = cadenaDeComandos
-            resultado = cmd.ExecuteNonQuery()
+
             Dim i As Integer = 0
 
 

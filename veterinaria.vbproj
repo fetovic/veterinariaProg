@@ -114,6 +114,7 @@
     </Compile>
     <Compile Include="Logica\logicaMascota.vb" />
     <Compile Include="Logica\logicaPersona.vb" />
+    <Compile Include="persistencia\persistenciaTelefono.vb" />
     <Compile Include="persistencia\conexion.vb" />
     <Compile Include="persistencia\persistenciaPersona.vb" />
     <Compile Include="persistencia\persitenciaMascota.vb" />
