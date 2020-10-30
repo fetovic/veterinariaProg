@@ -114,7 +114,7 @@
         Dim logica As New logicaPersona
         newpersona = logica.buscarPersona(ci)
         lVTelefonos.Clear()
-        If IsNothing(newpersona) Then
+        If newpersona.Ci = 0 Then
             btnBuscar.Enabled = True
             tbxci.Enabled = True
             tbxdireccion.Enabled = True
