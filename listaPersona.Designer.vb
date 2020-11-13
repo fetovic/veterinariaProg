@@ -29,14 +29,21 @@ Partial Class listaPersona
         Me.lblListarPersona = New System.Windows.Forms.Label()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.lvTelefono = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.btnModificarM = New System.Windows.Forms.Button()
+        Me.btnEliminarM = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lvListarPersona
         '
         Me.lvListarPersona.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Ci, Me.Nombre, Me.Direccion})
+        Me.lvListarPersona.FullRowSelect = True
         Me.lvListarPersona.HideSelection = False
         Me.lvListarPersona.Location = New System.Drawing.Point(28, 92)
         Me.lvListarPersona.Name = "lvListarPersona"
+        Me.lvListarPersona.ShowItemToolTips = True
         Me.lvListarPersona.Size = New System.Drawing.Size(483, 211)
         Me.lvListarPersona.TabIndex = 0
         Me.lvListarPersona.UseCompatibleStateImageBehavior = False
@@ -61,36 +68,70 @@ Partial Class listaPersona
         '
         Me.lblListarPersona.AutoSize = True
         Me.lblListarPersona.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblListarPersona.Location = New System.Drawing.Point(205, 25)
+        Me.lblListarPersona.Location = New System.Drawing.Point(211, 24)
         Me.lblListarPersona.Name = "lblListarPersona"
-        Me.lblListarPersona.Size = New System.Drawing.Size(290, 39)
+        Me.lblListarPersona.Size = New System.Drawing.Size(477, 39)
         Me.lblListarPersona.TabIndex = 1
-        Me.lblListarPersona.Text = "Lista de personas"
+        Me.lblListarPersona.Text = "Lista de personas y mascotas"
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(322, 355)
+        Me.btnEliminar.Location = New System.Drawing.Point(70, 358)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(137, 50)
         Me.btnEliminar.TabIndex = 2
-        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.Text = "Eliminar Persona"
         Me.btnEliminar.UseVisualStyleBackColor = True
         '
         'lvTelefono
         '
+        Me.lvTelefono.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
+        Me.lvTelefono.FullRowSelect = True
         Me.lvTelefono.HideSelection = False
-        Me.lvTelefono.Location = New System.Drawing.Point(535, 92)
+        Me.lvTelefono.Location = New System.Drawing.Point(517, 92)
         Me.lvTelefono.Name = "lvTelefono"
-        Me.lvTelefono.Size = New System.Drawing.Size(226, 211)
+        Me.lvTelefono.Size = New System.Drawing.Size(271, 211)
         Me.lvTelefono.TabIndex = 3
         Me.lvTelefono.UseCompatibleStateImageBehavior = False
-        Me.lvTelefono.View = System.Windows.Forms.View.List
+        Me.lvTelefono.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "id"
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "nombre"
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "añonacimiento"
+        '
+        'btnModificarM
+        '
+        Me.btnModificarM.Location = New System.Drawing.Point(651, 358)
+        Me.btnModificarM.Name = "btnModificarM"
+        Me.btnModificarM.Size = New System.Drawing.Size(137, 50)
+        Me.btnModificarM.TabIndex = 7
+        Me.btnModificarM.Text = "Modificar Mascota"
+        Me.btnModificarM.UseVisualStyleBackColor = True
+        '
+        'btnEliminarM
+        '
+        Me.btnEliminarM.Location = New System.Drawing.Point(473, 358)
+        Me.btnEliminarM.Name = "btnEliminarM"
+        Me.btnEliminarM.Size = New System.Drawing.Size(137, 50)
+        Me.btnEliminarM.TabIndex = 8
+        Me.btnEliminarM.Text = "Eliminar Mascota"
+        Me.btnEliminarM.UseVisualStyleBackColor = True
         '
         'listaPersona
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btnEliminarM)
+        Me.Controls.Add(Me.btnModificarM)
         Me.Controls.Add(Me.lvTelefono)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.lblListarPersona)
@@ -109,4 +150,9 @@ Partial Class listaPersona
     Friend WithEvents Nombre As ColumnHeader
     Friend WithEvents Direccion As ColumnHeader
     Friend WithEvents lvTelefono As ListView
+    Friend WithEvents ColumnHeader1 As ColumnHeader
+    Friend WithEvents ColumnHeader2 As ColumnHeader
+    Friend WithEvents ColumnHeader3 As ColumnHeader
+    Friend WithEvents btnModificarM As Button
+    Friend WithEvents btnEliminarM As Button
 End Class

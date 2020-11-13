@@ -31,6 +31,8 @@ Partial Class Mascota
         Me.lblciDueño = New System.Windows.Forms.Label()
         Me.tbxciDueño = New System.Windows.Forms.TextBox()
         Me.tbxañoDeNac = New System.Windows.Forms.TextBox()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lblMascota
@@ -112,11 +114,31 @@ Partial Class Mascota
         Me.tbxañoDeNac.Size = New System.Drawing.Size(207, 20)
         Me.tbxañoDeNac.TabIndex = 12
         '
+        'btnModificar
+        '
+        Me.btnModificar.Location = New System.Drawing.Point(298, 347)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(180, 34)
+        Me.btnModificar.TabIndex = 23
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = True
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.Location = New System.Drawing.Point(582, 153)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(138, 20)
+        Me.btnBuscar.TabIndex = 24
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.UseVisualStyleBackColor = True
+        '
         'Mascota
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btnBuscar)
+        Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.tbxciDueño)
         Me.Controls.Add(Me.lblciDueño)
         Me.Controls.Add(Me.btncancelarM)
@@ -142,4 +164,6 @@ Partial Class Mascota
     Friend WithEvents lblciDueño As Label
     Friend WithEvents tbxciDueño As TextBox
     Friend WithEvents tbxañoDeNac As TextBox
+    Friend WithEvents btnModificar As Button
+    Friend WithEvents btnBuscar As Button
 End Class

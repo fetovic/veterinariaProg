@@ -106,6 +106,12 @@
   <ItemGroup>
     <Compile Include="endida_es\claseMascota.vb" />
     <Compile Include="endida_es\clasePersona.vb" />
+    <Compile Include="BuscarMascota.Designer.vb">
+      <DependentUpon>BuscarMascota.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarMascota.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="listaPersona.Designer.vb">
       <DependentUpon>listaPersona.vb</DependentUpon>
     </Compile>
@@ -155,6 +161,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BuscarMascota.resx">
+      <DependentUpon>BuscarMascota.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="inicio.resx">
       <DependentUpon>inicio.vb</DependentUpon>
     </EmbeddedResource>

@@ -130,22 +130,26 @@
             tbxdireccion.Text = newpersona.direccion
             listaTelefono = newpersona.ListaTelefono
             Dim i As Integer = 0
-            While listaTelefono.Count > i
-                lVTelefonos.Items.Add(listaTelefono(i))
-                i = i + 1
 
-            End While
-            btnBuscar.Enabled = False
-            tbxci.Enabled = False
-            tbxdireccion.Enabled = True
-            tbxnombre.Enabled = True
-            tbxtelefono.Enabled = True
-            lVTelefonos.Enabled = True
-            btnaceptarP.Enabled = False
-            btncancelarp.Enabled = True
-            BtnTelefono.Enabled = True
-            btnModificar.Enabled = True
-        End If
+
+
+            While listaTelefono.Count > i
+                    lVTelefonos.Items.Add(listaTelefono(i))
+                    i = i + 1
+
+                End While
+                btnBuscar.Enabled = False
+                tbxci.Enabled = False
+                tbxdireccion.Enabled = True
+                tbxnombre.Enabled = True
+                tbxtelefono.Enabled = True
+                lVTelefonos.Enabled = True
+                btnaceptarP.Enabled = False
+                btncancelarp.Enabled = True
+                BtnTelefono.Enabled = True
+                btnModificar.Enabled = True
+            End If
+
 
     End Sub
 

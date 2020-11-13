@@ -28,7 +28,7 @@
     End Sub
     Public Function TraerTelefonos(ci As Integer) As List(Of Integer)
         Try
-
+            Persona.lVTelefonos.Items.Clear()
             Dim clasCnn As New conexion
             Dim cadenaDeComandos As String
 
@@ -39,12 +39,12 @@
 
             cmd.Connection = conection
 
-            cadenaDeComandos = "select * from telefono where ci=@ci;"
+            cadenaDeComandos = "select * from telefono where cip=@ci;"
             cmd.CommandText = cadenaDeComandos
             cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = ci
             reader = cmd.ExecuteReader
             While reader.Read
-                listaTelefono.Add(CInt(reader(2).ToString))
+                listaTelefono.Add(CInt(reader(1).ToString))
 
             End While
             Return listaTelefono
@@ -57,16 +57,25 @@
     End Function
 
     Public Sub borrarTelefonos(ci As Integer)
+        Try
 
-        Dim clasCnn = New conexion
-        Dim resultado As Integer
-        conection = clasCnn.abrirConexion()
-        Dim cadenaDeComandos As String
-        Dim cmd As New Npgsql.NpgsqlCommand()
-        resultado = cmd.ExecuteNonQuery()
-        cadenaDeComandos = "delete from telefono where cip = @ci"
-        cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = ci
-        cmd.CommandText = cadenaDeComandos
-        resultado = cmd.ExecuteNonQuery()
+            Dim clasCnn = New conexion
+            Dim resultado As Integer
+            conection = clasCnn.abrirConexion()
+            Dim cadenaDeComandos As String
+            Dim cmd As New Npgsql.NpgsqlCommand()
+            cadenaDeComandos = "delete from telefono where cip=@cip"
+            cmd.CommandText = cadenaDeComandos
+            cmd.Connection = conection
+            cmd.CommandText = cadenaDeComandos
+            cmd.Parameters.Add("@cip", NpgsqlTypes.NpgsqlDbType.Integer).Value = ci
+
+
+            resultado = cmd.ExecuteNonQuery()
+        Catch ex As Exception
+            Throw ex
+        Finally
+            conection.close
+        End Try
     End Sub
 End Class

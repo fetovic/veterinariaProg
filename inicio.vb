@@ -16,5 +16,8 @@
 
     Private Sub MascotaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MascotaToolStripMenuItem.Click
         Mascota.ShowDialog()
+        Mascota.tbxciDueño.Enabled = True
+        Mascota.btnModificar.Enabled = False
+        Mascota.lblMascota.Text = "Alta Mascota"
     End Sub
 End Class

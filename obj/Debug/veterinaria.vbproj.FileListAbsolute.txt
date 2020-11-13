@@ -121,3 +121,4 @@ C:\Users\Administrador\source\repos\veterinariaProg\obj\Debug\veterinaria.xml
 C:\Users\Administrador\source\repos\veterinariaProg\obj\Debug\veterinaria.pdb
 C:\Users\Administrador\source\repos\veterinariaProg\obj\Debug\veterinaria.vbprojAssemblyReference.cache
 C:\Users\Lucas\source\repos\veterinariaProg\obj\Debug\veterinaria.listaPersona.resources
+C:\Users\Administrador\source\repos\veterinariaProg\obj\Debug\veterinaria.BuscarMascota.resources

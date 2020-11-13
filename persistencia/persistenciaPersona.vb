@@ -16,7 +16,6 @@
             cmd.Parameters.Add("@direccion", NpgsqlTypes.NpgsqlDbType.Varchar, 100).Value = personaUser.direccion
             Dim resultado As Integer
             resultado = cmd.ExecuteNonQuery()
-            'alta telefono
             If resultado = 1 Then
 
             End If
@@ -77,10 +76,7 @@
             cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = personaUser.Ci
             cmd.Parameters.Add("@nombre", NpgsqlTypes.NpgsqlDbType.Varchar, 100).Value = personaUser.Nombre
             cmd.Parameters.Add("@direccion", NpgsqlTypes.NpgsqlDbType.Varchar, 100).Value = personaUser.direccion
-            Dim resultado As Integer
-
-            Dim i As Integer = 0
-
+            cmd.ExecuteNonQuery()
 
         Catch ex As Exception
             Throw ex
@@ -89,29 +85,7 @@
         End Try
 
     End Sub
-    Public Sub agregarTelefono(ci As Integer, telefono As Integer)
-        Try
 
-
-            Dim clasCnn = New conexion
-
-            conection = clasCnn.abrirConexion()
-            Dim cadenaDeComandos As String
-            Dim cmd As New Npgsql.NpgsqlCommand()
-            Dim resultado As Integer
-            cmd.Connection = conection
-            cadenaDeComandos = "insert into telefono(cip,telefono) values (@cip ,@telefono);"
-            cmd.CommandText = cadenaDeComandos
-            cmd.Parameters.Add("@cip", NpgsqlTypes.NpgsqlDbType.Integer).Value = ci
-            cmd.Parameters.Add("@telefono", NpgsqlTypes.NpgsqlDbType.Integer).Value = telefono
-            Debug.WriteLine(ci)
-            Debug.WriteLine(telefono)
-            resultado = cmd.ExecuteNonQuery()
-
-        Catch ex As Exception
-            Debug.WriteLine(ex)
-        End Try
-    End Sub
 
     Public Function listarPersona() As List(Of clasePersona)
         Dim listaPersona As New List(Of clasePersona)
@@ -145,5 +119,25 @@
         End Try
         Return listaPersona
     End Function
+    Public Sub borrarPersona(ci As Integer)
+        Try
+            Dim clasCnn = New conexion
 
+            conection = clasCnn.abrirConexion()
+            Dim cadenaDeComandos As String
+            cadenaDeComandos = "delete from persona where ci = @ci"
+            Dim cmd As New Npgsql.NpgsqlCommand()
+            cmd.CommandText = cadenaDeComandos
+            cmd.Connection = conection
+            cmd.Parameters.Add("@ci", NpgsqlTypes.NpgsqlDbType.Integer).Value = ci
+
+            cmd.ExecuteNonQuery()
+
+        Catch ex As Exception
+            Throw ex
+        Finally
+            conection.close
+        End Try
+
+    End Sub
 End Class
